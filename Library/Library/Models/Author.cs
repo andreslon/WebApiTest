@@ -17,7 +17,7 @@ namespace Library.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Author()
         {
-            this.Book = new List<Book>();
+            this.Book = new HashSet<Book>();
         }
     
         public int Id { get; set; }
@@ -25,6 +25,6 @@ namespace Library.Models
         public string Country { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual List<Book> Book { get; set; }
+        public virtual ICollection<Book> Book { get; set; }
     }
 }

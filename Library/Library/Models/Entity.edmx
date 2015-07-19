@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LibraryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="LibraryTest_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Author">
           <Key>
             <PropertyRef Name="Id" />
@@ -31,7 +31,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="200" />
         </EntityType>
-        <Association Name="FK__Book__AuthorId__15502E78">
+        <Association Name="FK__Book__AuthorId__31EC6D26">
           <End Role="Author" Type="Self.Author" Multiplicity="0..1" />
           <End Role="Book" Type="Self.Book" Multiplicity="*" />
           <ReferentialConstraint>
@@ -43,7 +43,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Book__CategoryId__145C0A3F">
+        <Association Name="FK__Book__CategoryId__30F848ED">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="Book" Type="Self.Book" Multiplicity="*" />
           <ReferentialConstraint>
@@ -55,15 +55,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="LibraryModelStoreContainer">
+        <EntityContainer Name="LibraryTest_dbModelStoreContainer">
           <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Book" EntityType="Self.Book" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Book__AuthorId__15502E78" Association="Self.FK__Book__AuthorId__15502E78">
+          <AssociationSet Name="FK__Book__AuthorId__31EC6D26" Association="Self.FK__Book__AuthorId__31EC6D26">
             <End Role="Author" EntitySet="Author" />
             <End Role="Book" EntitySet="Book" />
           </AssociationSet>
-          <AssociationSet Name="FK__Book__CategoryId__145C0A3F" Association="Self.FK__Book__CategoryId__145C0A3F">
+          <AssociationSet Name="FK__Book__CategoryId__30F848ED" Association="Self.FK__Book__CategoryId__30F848ED">
             <End Role="Category" EntitySet="Category" />
             <End Role="Book" EntitySet="Book" />
           </AssociationSet>
@@ -72,7 +72,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="LibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="LibraryTest_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Author">
           <Key>
             <PropertyRef Name="Id" />
@@ -80,7 +80,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Book" Relationship="Self.FK__Book__AuthorId__15502E78" FromRole="Author" ToRole="Book" />
+          <NavigationProperty Name="Book" Relationship="Self.FK__Book__AuthorId__31EC6D26" FromRole="Author" ToRole="Book" />
         </EntityType>
         <EntityType Name="Book">
           <Key>
@@ -92,8 +92,8 @@
           <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="CategoryId" Type="Int32" />
           <Property Name="AuthorId" Type="Int32" />
-          <NavigationProperty Name="Author" Relationship="Self.FK__Book__AuthorId__15502E78" FromRole="Book" ToRole="Author" />
-          <NavigationProperty Name="Category" Relationship="Self.FK__Book__CategoryId__145C0A3F" FromRole="Book" ToRole="Category" />
+          <NavigationProperty Name="Author" Relationship="Self.FK__Book__AuthorId__31EC6D26" FromRole="Book" ToRole="Author" />
+          <NavigationProperty Name="Category" Relationship="Self.FK__Book__CategoryId__30F848ED" FromRole="Book" ToRole="Category" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -101,9 +101,9 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Book" Relationship="Self.FK__Book__CategoryId__145C0A3F" FromRole="Category" ToRole="Book" />
+          <NavigationProperty Name="Book" Relationship="Self.FK__Book__CategoryId__30F848ED" FromRole="Category" ToRole="Book" />
         </EntityType>
-        <Association Name="FK__Book__AuthorId__15502E78">
+        <Association Name="FK__Book__AuthorId__31EC6D26">
           <End Role="Author" Type="Self.Author" Multiplicity="0..1" />
           <End Role="Book" Type="Self.Book" Multiplicity="*" />
           <ReferentialConstraint>
@@ -115,7 +115,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Book__CategoryId__145C0A3F">
+        <Association Name="FK__Book__CategoryId__30F848ED">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="Book" Type="Self.Book" Multiplicity="*" />
           <ReferentialConstraint>
@@ -127,15 +127,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="LibraryEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="LibraryTest_dbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Author" EntityType="Self.Author" />
           <EntitySet Name="Book" EntityType="Self.Book" />
           <EntitySet Name="Category" EntityType="Self.Category" />
-          <AssociationSet Name="FK__Book__AuthorId__15502E78" Association="Self.FK__Book__AuthorId__15502E78">
+          <AssociationSet Name="FK__Book__AuthorId__31EC6D26" Association="Self.FK__Book__AuthorId__31EC6D26">
             <End Role="Author" EntitySet="Author" />
             <End Role="Book" EntitySet="Book" />
           </AssociationSet>
-          <AssociationSet Name="FK__Book__CategoryId__145C0A3F" Association="Self.FK__Book__CategoryId__145C0A3F">
+          <AssociationSet Name="FK__Book__CategoryId__30F848ED" Association="Self.FK__Book__CategoryId__30F848ED">
             <End Role="Category" EntitySet="Category" />
             <End Role="Book" EntitySet="Book" />
           </AssociationSet>
@@ -145,9 +145,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="LibraryModelStoreContainer" CdmEntityContainer="LibraryEntities">
+        <EntityContainerMapping StorageEntityContainer="LibraryTest_dbModelStoreContainer" CdmEntityContainer="LibraryTest_dbEntities">
           <EntitySetMapping Name="Author">
-            <EntityTypeMapping TypeName="LibraryModel.Author">
+            <EntityTypeMapping TypeName="LibraryTest_dbModel.Author">
               <MappingFragment StoreEntitySet="Author">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -156,7 +156,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Book">
-            <EntityTypeMapping TypeName="LibraryModel.Book">
+            <EntityTypeMapping TypeName="LibraryTest_dbModel.Book">
               <MappingFragment StoreEntitySet="Book">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -168,7 +168,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Category">
-            <EntityTypeMapping TypeName="LibraryModel.Category">
+            <EntityTypeMapping TypeName="LibraryTest_dbModel.Category">
               <MappingFragment StoreEntitySet="Category">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

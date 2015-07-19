@@ -19,9 +19,18 @@ Id int primary key identity(1,1),
 Title nvarchar(100)  ,
 Year int  ,
 Price decimal  ,
-CategoryId int null foreign key references Category(Id),
-AuthorId int null foreign key references Author(Id)
+CategoryId int null  ,
+AuthorId int null 
 )
+
+--create table Book(
+--Id int primary key identity(1,1),
+--Title nvarchar(100)  ,
+--Year int  ,
+--Price decimal  ,
+--CategoryId int null foreign key references Category(Id),
+--AuthorId int null foreign key references Author(Id)
+--)
 
 
  insert into Author values ('Jorge Isaac','Colombia')
@@ -33,3 +42,5 @@ AuthorId int null foreign key references Author(Id)
  
 
  insert into Book values ('Don Quijote',1992,20.00,1,2)
+
+  

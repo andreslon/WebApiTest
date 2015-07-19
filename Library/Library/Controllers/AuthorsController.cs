@@ -15,7 +15,7 @@ namespace Library.Controllers
 {
     public class AuthorsController : ApiController
     {
-        private LibraryEntities db = new LibraryEntities();
+        private LibraryTest_dbEntities db = new LibraryTest_dbEntities();
 
         // GET: api/Authors
         public IQueryable<Author> GetAuthor()
