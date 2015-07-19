@@ -5,20 +5,20 @@ Use Library;
 
 create table Author(
 Id int primary key identity(1,1),
-Name nvarchar(200) null,
-Country nvarchar(100) null
+Name nvarchar(200)  ,
+Country nvarchar(100)  
 )
 
 create table Category(
 Id int primary key identity(1,1),
-Name nvarchar(200) null,
+Name nvarchar(200)  ,
 )
 
 create table Book(
 Id int primary key identity(1,1),
-Title nvarchar(100) null,
-Year smallint null,
-Price money null,
+Title nvarchar(100)  ,
+Year int  ,
+Price decimal  ,
 CategoryId int null foreign key references Category(Id),
 AuthorId int null foreign key references Author(Id)
 )
@@ -26,17 +26,10 @@ AuthorId int null foreign key references Author(Id)
 
  insert into Author values ('Jorge Isaac','Colombia')
  insert into Author values ('Gabriel Garcia Marquez','Colombia')
- insert into Author values ('00000000000','Colombia')
- insert into Author values ('00000000000','Colombia')
- insert into Author values ('00000000000','Colombia')
+  
 
+ insert into Category values ('Love')
+ insert into Category values ('Thriller')
+ 
 
-
- insert into Category values ('00000000000')
- insert into Category values ('00000000000')
- insert into Category values ('00000000000')
- insert into Category values ('00000000000')
- insert into Category values ('00000000000')
-
-
- insert into Book values ('00000000000',2015,20.00,1,2)
+ insert into Book values ('Don Quijote',1992,20.00,1,2)
