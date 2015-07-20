@@ -1,7 +1,7 @@
---Drop Database Library
-Create Database Library;
+--Drop Database TestLibrary_db
+Create Database TestLibrary_db;
 
-Use Library;
+Use TestLibrary_db;
 
 create table Author(
 Id int primary key identity(1,1),
@@ -14,23 +14,16 @@ Id int primary key identity(1,1),
 Name nvarchar(200)  ,
 )
 
+ 
+
 create table Book(
 Id int primary key identity(1,1),
 Title nvarchar(100)  ,
 Year int  ,
 Price decimal  ,
-CategoryId int null  ,
-AuthorId int null 
+CategoryId int null foreign key references Category(Id),
+AuthorId int null foreign key references Author(Id)
 )
-
---create table Book(
---Id int primary key identity(1,1),
---Title nvarchar(100)  ,
---Year int  ,
---Price decimal  ,
---CategoryId int null foreign key references Category(Id),
---AuthorId int null foreign key references Author(Id)
---)
 
 
  insert into Author values ('Jorge Isaac','Colombia')
