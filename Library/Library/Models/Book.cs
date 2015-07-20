@@ -9,17 +9,17 @@
 
 namespace Library.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Book
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public Nullable<int> Year { get; set; }
-        public Nullable<decimal> Price { get; set; }
-        public Nullable<int> CategoryId { get; set; }
-        public Nullable<int> AuthorId { get; set; }
+        public int Year { get; set; }
+        public int CategoryId { get; set; }
+        public int AuthorId { get; set; }
     
         public virtual Author Author { get; set; }
         public virtual Category Category { get; set; }

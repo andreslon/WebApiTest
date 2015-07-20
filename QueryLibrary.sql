@@ -1,7 +1,7 @@
---Drop Database TestLibrary_db
-Create Database TestLibrary_db;
+--Drop Database LibraryTest_db
+Create Database LibraryTest_db;
 
-Use TestLibrary_db;
+Use LibraryTest_db;
 
 create table Author(
 Id int primary key identity(1,1),
@@ -20,7 +20,6 @@ create table Book(
 Id int primary key identity(1,1),
 Title nvarchar(100)  ,
 Year int  ,
-Price decimal  ,
 CategoryId int null foreign key references Category(Id),
 AuthorId int null foreign key references Author(Id)
 )
@@ -34,6 +33,14 @@ AuthorId int null foreign key references Author(Id)
  insert into Category values ('Thriller')
  
 
- insert into Book values ('Don Quijote',1992,20.00,1,2)
+ insert into Book values ('Don Quijote',1992,1,2)
 
   
+
+  SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+    [Extent1].[Year] AS [Year], 
+    [Extent1].[CategoryId] AS [CategoryId], 
+    [Extent1].[AuthorId] AS [AuthorId]
+    FROM [dbo].[Book] AS [Extent1]

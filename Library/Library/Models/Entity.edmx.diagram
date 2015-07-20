@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1319c110d63c4f528b86b8d3f1e04096" Name="Diagram1">
-        <EntityTypeShape EntityType="LibraryTest_dbModel.Author" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+      <Diagram DiagramId="e985606c66094c439444f9b520d1fb60" Name="Diagram1">
+        <EntityTypeShape EntityType="LibraryTest_dbModel.Author" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="LibraryTest_dbModel.Book" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="LibraryTest_dbModel.Category" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <AssociationConnector Association="LibraryTest_dbModel.FK__Book__AuthorId__31EC6D26" ManuallyRouted="false" />
-        <AssociationConnector Association="LibraryTest_dbModel.FK__Book__CategoryId__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryTest_dbModel.FK__Book__AuthorId__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryTest_dbModel.FK__Book__CategoryId__403A8C7D" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

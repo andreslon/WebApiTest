@@ -20,7 +20,6 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="100" />
           <Property Name="Year" Type="int" />
-          <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
           <Property Name="CategoryId" Type="int" />
           <Property Name="AuthorId" Type="int" />
         </EntityType>
@@ -31,7 +30,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="200" />
         </EntityType>
-        <Association Name="FK__Book__AuthorId__31EC6D26">
+        <Association Name="FK__Book__AuthorId__412EB0B6">
           <End Role="Author" Type="Self.Author" Multiplicity="0..1" />
           <End Role="Book" Type="Self.Book" Multiplicity="*" />
           <ReferentialConstraint>
@@ -43,7 +42,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Book__CategoryId__30F848ED">
+        <Association Name="FK__Book__CategoryId__403A8C7D">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="Book" Type="Self.Book" Multiplicity="*" />
           <ReferentialConstraint>
@@ -59,11 +58,11 @@
           <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Book" EntityType="Self.Book" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Book__AuthorId__31EC6D26" Association="Self.FK__Book__AuthorId__31EC6D26">
+          <AssociationSet Name="FK__Book__AuthorId__412EB0B6" Association="Self.FK__Book__AuthorId__412EB0B6">
             <End Role="Author" EntitySet="Author" />
             <End Role="Book" EntitySet="Book" />
           </AssociationSet>
-          <AssociationSet Name="FK__Book__CategoryId__30F848ED" Association="Self.FK__Book__CategoryId__30F848ED">
+          <AssociationSet Name="FK__Book__CategoryId__403A8C7D" Association="Self.FK__Book__CategoryId__403A8C7D">
             <End Role="Category" EntitySet="Category" />
             <End Role="Book" EntitySet="Book" />
           </AssociationSet>
@@ -80,7 +79,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Book" Relationship="Self.FK__Book__AuthorId__31EC6D26" FromRole="Author" ToRole="Book" />
+          <NavigationProperty Name="Book" Relationship="Self.FK__Book__AuthorId__412EB0B6" FromRole="Author" ToRole="Book" />
         </EntityType>
         <EntityType Name="Book">
           <Key>
@@ -89,11 +88,10 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Year" Type="Int32" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="CategoryId" Type="Int32" />
           <Property Name="AuthorId" Type="Int32" />
-          <NavigationProperty Name="Author" Relationship="Self.FK__Book__AuthorId__31EC6D26" FromRole="Book" ToRole="Author" />
-          <NavigationProperty Name="Category" Relationship="Self.FK__Book__CategoryId__30F848ED" FromRole="Book" ToRole="Category" />
+          <NavigationProperty Name="Author" Relationship="Self.FK__Book__AuthorId__412EB0B6" FromRole="Book" ToRole="Author" />
+          <NavigationProperty Name="Category" Relationship="Self.FK__Book__CategoryId__403A8C7D" FromRole="Book" ToRole="Category" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -101,9 +99,9 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Book" Relationship="Self.FK__Book__CategoryId__30F848ED" FromRole="Category" ToRole="Book" />
+          <NavigationProperty Name="Book" Relationship="Self.FK__Book__CategoryId__403A8C7D" FromRole="Category" ToRole="Book" />
         </EntityType>
-        <Association Name="FK__Book__AuthorId__31EC6D26">
+        <Association Name="FK__Book__AuthorId__412EB0B6">
           <End Role="Author" Type="Self.Author" Multiplicity="0..1" />
           <End Role="Book" Type="Self.Book" Multiplicity="*" />
           <ReferentialConstraint>
@@ -115,7 +113,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Book__CategoryId__30F848ED">
+        <Association Name="FK__Book__CategoryId__403A8C7D">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="Book" Type="Self.Book" Multiplicity="*" />
           <ReferentialConstraint>
@@ -131,11 +129,11 @@
           <EntitySet Name="Author" EntityType="Self.Author" />
           <EntitySet Name="Book" EntityType="Self.Book" />
           <EntitySet Name="Category" EntityType="Self.Category" />
-          <AssociationSet Name="FK__Book__AuthorId__31EC6D26" Association="Self.FK__Book__AuthorId__31EC6D26">
+          <AssociationSet Name="FK__Book__AuthorId__412EB0B6" Association="Self.FK__Book__AuthorId__412EB0B6">
             <End Role="Author" EntitySet="Author" />
             <End Role="Book" EntitySet="Book" />
           </AssociationSet>
-          <AssociationSet Name="FK__Book__CategoryId__30F848ED" Association="Self.FK__Book__CategoryId__30F848ED">
+          <AssociationSet Name="FK__Book__CategoryId__403A8C7D" Association="Self.FK__Book__CategoryId__403A8C7D">
             <End Role="Category" EntitySet="Category" />
             <End Role="Book" EntitySet="Book" />
           </AssociationSet>
@@ -161,7 +159,6 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Year" ColumnName="Year" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
                 <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
               </MappingFragment>

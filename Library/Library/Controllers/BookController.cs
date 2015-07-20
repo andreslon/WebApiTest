@@ -50,7 +50,7 @@ namespace Library.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Title,Year,Price,CategoryId,AuthorId")] Book book)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Title,Year,CategoryId,AuthorId")] Book book)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Library.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Title,Year,Price,CategoryId,AuthorId")] Book book)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Title,Year,CategoryId,AuthorId")] Book book)
         {
             if (ModelState.IsValid)
             {
