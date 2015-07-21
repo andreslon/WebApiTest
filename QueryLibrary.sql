@@ -24,23 +24,36 @@ CategoryId int null foreign key references Category(Id),
 AuthorId int null foreign key references Author(Id)
 )
 
+ insert into Category values ('Romance')
+ insert into Category values ('Fantasy')
+ insert into Category values ('Family saga')
+ insert into Category values ('Crime novel')
 
- insert into Author values ('Jorge Isaac','Colombia')
- insert into Author values ('Gabriel Garcia Marquez','Colombia')
+ insert into Author values ('H. Rider Haggard','United Kingdom')
+ insert into Author values ('Cao Xueqin','China')
+insert into Author values ('Agatha Christie','United Kingdom')
+insert into Author values ('J. K. Rowling','Canada')
+insert into Author values ('Antoine de Saint-Exupéry','United States')
+
+ insert into Book values ('She: A History of Adventure',1868
+ ,(select id from Category where Name like '%Romance%' )
+ ,(select id from Author where Name like '%Rider Hagga%' ))
+
+insert into Book values ('Dream of the Red Chamber',1887
+ ,(select id from Category where Name like '%Family saga%' )
+ ,(select id from Author where Name like '%Cao Xueqin%' ))
+
+ insert into Book values ('And Then There Were None',1887
+ ,(select id from Category where Name like '%Crime novel%' )
+ ,(select id from Author where Name like '%Agatha%' ))
+
+  insert into Book values ('Harry Potter and the Philosophers Stone',1997
+ ,(select id from Category where Name like '%Fantasy%' )
+ ,(select id from Author where Name like '%J. K. Rowling%' ))
+
+   insert into Book values ('The Little Prince',1997
+ ,(select id from Category where Name like '%Fantasy%' )
+ ,(select id from Author where Name like '%Antoine de Saint-Exupéry%' ))
+
   
-
- insert into Category values ('Love')
- insert into Category values ('Thriller')
- 
-
- insert into Book values ('Don Quijote',1992,1,2)
-
-  
-
-  SELECT 
-    [Extent1].[Id] AS [Id], 
-    [Extent1].[Title] AS [Title], 
-    [Extent1].[Year] AS [Year], 
-    [Extent1].[CategoryId] AS [CategoryId], 
-    [Extent1].[AuthorId] AS [AuthorId]
-    FROM [dbo].[Book] AS [Extent1]
+   
